@@ -1,0 +1,105 @@
+{
+    "manifestVersion": 1,
+    "id": "vsts-extensions-buildbreaker",
+    "version": "0.1.0",
+    "name": "Build Breaker",
+    "publisher": "teamofprogrammers",
+	"description" : "Are you unable to enforce your normal shaming processes due to your team working from multiple locations or company hazing policies? Worry no longer! You can place a widget right on your Team dashboard to motivate your developers into now breaking the build!",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "images/fabrikam-logo.png"
+    },
+    "categories": [
+        "Plan and track"
+    ],
+    "tags": [
+        "build",
+        "fail",
+        "break build",
+		"build breaker",
+		"shame"
+    ],
+    "screenshots": [
+        {
+            "path": "screenshots/screen1.png"
+        },
+        {
+            "path": "screenshots/screen2.png"
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "fabrikam-license-terms.md"
+        }
+    },
+    "links": {
+        "home": {
+            "uri": "https://www.teamofprogramers.com"
+        }
+    },
+    "branding": {
+        "color": "rgb(34, 34, 34)",
+        "theme": "dark"
+    },
+    "scopes": [
+        "vso.profile",
+        "vso.build"
+    ],
+    "baseUri": "https://vstsbb.teamofprogrammers.com",
+    "contributions": [
+		{
+			"id": "buildbreaker-chart1",
+			"type": "ms.vss-dashboards-web.widget",
+			"targets": [
+				"ms.vss-dashboards-web.widget-catalog", "teamofprogrammers.vsts-extensions-buildbreaker.buildbreaker-chart1-config" 
+			],
+			"properties": {
+				"name": "Build Breaker",
+				"description": "Are you unable to enforce your normal shaming processes due to your team working from multiple locations? Worry no longer!",
+				"previewImageUrl": "img/preview.png",                       
+				"uri": "buildbreaker-chart1.html",
+				"supportedSizes": [
+					{
+							"rowSpan": 2,
+							"columnSpan": 2
+						}
+					],
+				"supportedScopes": ["project_team"]
+			}
+		},
+		{
+             "id": "buildbreaker-chart1-config",
+             "type": "ms.vss-dashboards-web.widget-configuration",
+             "targets": [ "ms.vss-dashboards-web.widget-configuration"],
+             "properties": {
+                 "name": "Build Breaker Configuration",
+                 "description": "Configures Build Breaker Widget",
+                 "uri": "buildbreaker-chart1-config.html"
+             }
+		}
+    ],
+	 "files": [
+            {
+                "path": "buildbreaker-chart1.html", "addressable": true
+            },
+			{
+                "path": "buildbreaker-chart1-config.html", "addressable": true
+            },
+			{
+                "path": "sdk/scripts", "addressable": true
+            },
+            {
+                "path": "img", "addressable": true
+            },
+			{
+			    "path": "css", "addressable": true
+			}
+        ]
+}
